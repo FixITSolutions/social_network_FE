@@ -44,4 +44,8 @@ export class WindowComponent implements OnInit {
     console.log(data.message)
     this.messages.push(data.message);
   }
+
+  ngOnDestroy(){
+    this.socket.emit('removeUser', this.user);
+  }
 }

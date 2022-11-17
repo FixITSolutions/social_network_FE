@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/profile.service';
 import { config } from "../../shared/config";
-import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'sn-profile',
@@ -18,7 +17,6 @@ export class ProfileComponent implements OnInit {
   uploadMessage: string = '';
   constructor(
     private profileServices : ProfileService,
-    private authService : AuthService
   ) { }
 
   ngOnInit() {
@@ -32,7 +30,7 @@ export class ProfileComponent implements OnInit {
 
   updateUser(){
     this.profileServices.updateUser(this.user).subscribe((data)=>{
-      console.log(data)
+      this.editStatus = !data || !data['success'];
     })
   }
 

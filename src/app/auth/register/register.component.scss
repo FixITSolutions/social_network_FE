@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(102, 116, 163);
+    .container {
+        width: 400px;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .formHeader {
+        text-align: center;
+    }
+    .inputForm {
+        width: 90%;
+        margin: 0 auto;
+    }
+    a {
+        text-align: center;
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}

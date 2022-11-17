@@ -1,0 +1,13 @@
+<form class="container" (keyup.enter)="edit()">
+    <mat-form-field class="inputForm">
+        <input required name="email" type="text" matInput placeholder="Title" [(ngModel)]="data.title" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <textarea rows="10" required maxlength="255" matInput placeholder="Content" [(ngModel)]="data.description" [ngModelOptions]="{standalone: true}"></textarea>
+        <span class="descriptionLimit" [(innerHTML)]='characterLimit'></span>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="edit()">Submit</button>
+</form>

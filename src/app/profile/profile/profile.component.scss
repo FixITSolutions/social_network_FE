@@ -1,0 +1,48 @@
+:host {
+    width: auto;
+    height: auto;
+    form {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+    .userAvatar {
+        margin: auto;
+        width: 300px;
+        max-height: 4000px;
+        margin: 15px;
+    }
+    .inputForm {
+        margin: auto;
+        background-color: whitesmoke;
+        padding: 15px;
+    }
+    .profileButtons {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 5%;
+    }
+    .hiddenInput {
+        display: none;
+    }
+    .avatarEditButton {
+        position: absolute;
+        border: 2px solid gainsboro;
+        margin: 0;
+    }
+    .profileLayout {
+        display: flex;
+        justify-content: space-around;
+    }
+    @media screen and (min-width: 1024px) {
+        .inputForm {
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .profileLayout {
+            display: initial;
+            text-align: center;
+        }
+    }
+}

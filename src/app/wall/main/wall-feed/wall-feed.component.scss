@@ -1,0 +1,46 @@
+:host {
+    width: 100%;
+    .commentSection {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+    .postTitle {
+        font-weight: 600;
+        text-align: center;
+    }
+    hr {
+        width: 50%;
+        margin-bottom: 25px;
+        color: #CCC;
+        border-top: 2px solid gainsboro;
+    }
+    .postHeader {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    .userAvatarPost {
+        width: 55px;
+        height: 55px;
+        border: 3px solid gainsboro;
+        border-radius: 50%;
+        margin: 5px;
+    }
+    .createdAt {
+        padding-top: 15px;
+    }
+    .flex {
+        display: flex;
+    }
+    .likeAndComment {
+        margin: 0;
+        padding: 10px 0px;
+        border-top: 1px solid gainsboro;
+        display: flex;
+        justify-content: space-around;
+    }
+    textarea {
+        resize: none;
+    }
+}

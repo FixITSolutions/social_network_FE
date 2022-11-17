@@ -1,0 +1,31 @@
+<mat-card class="container">
+    <div class="formHeader">
+        <h1>Social Network</h1>
+
+    </div>
+    <form [formGroup]="registerForm">
+        <mat-form-field class="inputForm">
+            <input required name="email" type="email" matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.email">Email is not valid</mat-error>
+            <mat-error *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.required">Email is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input required name="name" type="text" matInput placeholder="Name" formControlName="name">
+            <mat-error *ngIf="registerForm.controls.name.errors && registerForm.controls.name.errors.required">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input required name="password" type="password" matInput placeholder="Password" formControlName="password">
+            <mat-error *ngIf="registerForm.controls.password.errors && registerForm.controls.password.value.length<6">Password too short</mat-error>
+            <mat-error *ngIf="registerForm.controls.password.errors && registerForm.controls.password.errors.required">Password is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input required name="confirmedPassword" type="password" matInput placeholder="Confirm password" formControlName="confirmedPassword">
+            <mat-error *ngIf="registerForm.controls.confirmedPassword.errors && registerForm.controls.confirmedPassword.errors.required">Password is required</mat-error>
+            <mat-error *ngIf="registerForm.controls.confirmedPassword.errors && registerForm.controls.confirmedPassword.errors.mustMatch">Passwords don't match</mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <button mat-raised-button color="primary" (click)="register()">Register</button>
+    </form>
+    <a [routerLink]="['/login']">Already registered? Go to login</a>
+</mat-card>

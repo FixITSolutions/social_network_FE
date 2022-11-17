@@ -1,0 +1,19 @@
+:host {
+    .container {
+        width: 100%;
+        height: 200px;
+        background-image: url(https://cdn.searchenginejournal.com/wp-content/uploads/2019/01/Top-9-Benefits-of-Social-Media-for-Your-Business-760x400.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        p {
+            margin-right: 5%;
+        }
+        .active {
+            transform: scale(1.1);
+        }
+    }
+}

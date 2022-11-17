@@ -1,0 +1,6 @@
+<sn-wall-control (refresh)="refreshFeed()" (toggle)="toggleNewPost()" [numberOfPosts]="numberOfPosts">
+</sn-wall-control>
+<sn-new-post *ngIf="newPostStatus" (new)="newPost($event)"></sn-new-post>
+<sn-wall-feed class="wallFeed" (edit)="editPost($event)" (delete)="deletePost($event)" (refresh)="refreshFeed()" *ngFor="let item of postsArray" [post]="item">
+</sn-wall-feed>
+<router-outlet></router-outlet>

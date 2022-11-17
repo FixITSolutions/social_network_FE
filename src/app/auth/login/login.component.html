@@ -1,0 +1,21 @@
+<mat-card class="container">
+    <div class="formHeader">
+        <h1>Social Network</h1>
+    </div>
+    <form [formGroup]="loginForm">
+        <mat-form-field class="inputForm">
+            <input class="form-control" required name="email" type="email" matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="loginForm.controls.email.errors && loginForm.controls.email.errors.email">Email is not valid</mat-error>
+            <mat-error *ngIf="loginForm.controls.email.errors && loginForm.controls.email.errors.required">Email is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="inputForm">
+            <input class="form-control" required name="password" type="password" matInput placeholder="Password" formControlName="password">
+            <mat-error *ngIf="loginForm.controls.password.errors && loginForm.controls.password.value.length<6">Password too short</mat-error>
+            <mat-error *ngIf="loginForm.controls.password.errors && loginForm.controls.password.errors.required">Password is required</mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </form>
+    <a [routerLink]="['/register']">Not registered? Do it now</a>
+</mat-card>

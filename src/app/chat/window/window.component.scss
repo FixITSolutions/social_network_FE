@@ -1,0 +1,11 @@
+:host {
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .usersOnline {
+        width: 250px;
+        padding: 15px;
+        border: 1px solid gainsboro;
+    }
+}

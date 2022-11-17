@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm)
     //register user
     if(this.registerForm.status === 'VALID'){
-      this.authService.register(this.registerForm).subscribe((data)=>{
+      this.authService.register(this.registerForm.value).subscribe((data)=>{
         this.router.navigateByUrl('/wall');
           this.email= '';
           this.name= '';

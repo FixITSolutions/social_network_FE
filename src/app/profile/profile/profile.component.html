@@ -1,0 +1,37 @@
+<div class="profileButtons">
+    <button mat-raised-button color="primary" (click)="edit()">Edit Profile</button>
+</div>
+
+<div *ngIf="!editStatus" class="inputForm">
+    <div class="profileLayout">
+        <div>
+            <img class="userAvatar" mat-card-image [src]="user.avatar" alt="avatar photo">
+            <label class="avatarEditButton" for="avatarInput" title="Change Avatar"><mat-icon>edit</mat-icon></label>
+            <input class="hiddenInput" id="avatarInput" name="avatarInput" type="file" accept="image/*" value="value" (change)="uploadPhoto($event)">
+            <ng-container *ngIf="uploadOK; else elseTemplate">
+                <button mat-raised-button color="primary" (click)="changeAvatar()">Confirm</button>
+            </ng-container>
+            <br>
+            <ng-template #elseTemplate>
+                <span>{{uploadMessage}}</span>
+            </ng-template>
+        </div>
+
+        <div>
+            <p>Name: {{user.name}} </p>
+            <p>Email: {{user.email}}</p>
+        </div>
+    </div>
+</div>
+
+<form *ngIf="editStatus" class="inputForm">
+    <mat-form-field>
+        <input name="name" type="text" matInput placeholder="Name" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field>
+        <input name="email" type="email" matInput placeholder="Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button color="primary" (click)="updateUser()">Submit</button>
+</form>

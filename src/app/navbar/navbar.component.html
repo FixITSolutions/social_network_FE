@@ -1,0 +1,9 @@
+<div class="container">
+    <p>
+        <a [ngClass]="{'active': mouse1}" (mouseover)="mouse1 = true" (mouseout)="mouse1=false" mat-fab [routerLink]="['./']">Wall</a> |
+        <a [ngClass]="{'active': mouse2}" (mouseover)="mouse2 = true" (mouseout)="mouse2=false" mat-fab [routerLink]="['./profile']">Profile</a> |
+        <a [ngClass]="{'active': mouse3}" (mouseover)="mouse3 = true" (mouseout)="mouse3=false" mat-fab [routerLink]="['./chat']">Chat</a> |
+        <a [ngClass]="{'active': mouse4}" (mouseover)="mouse4 = true" (mouseout)="mouse4=false" mat-fab (click)="logout()">Logout</a>
+    </p>
+</div>
+<router-outlet></router-outlet>

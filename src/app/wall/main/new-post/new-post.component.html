@@ -1,0 +1,11 @@
+<form class="container">
+    <mat-form-field class="inputForm">
+        <input required name="email" type="text" matInput placeholder="Title" [(ngModel)]="post.title" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <textarea #description required maxlength="255" rows="10" matInput placeholder="Content" [(ngModel)]="post.description" [ngModelOptions]="{standalone: true}"></textarea>
+        <span class="descriptionLimit">{{255 - description.value.length}}</span>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="newPost()">Submit</button><span *ngIf="alertStatus" class="alert">{{alertMessage}}</span>
+</form>

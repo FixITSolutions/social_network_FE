@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    margin: 0;
+    background: radial-gradient( #b9b9b9, #9198e5, pink);
+}
+
+.alert {
+    color: red;
+    border: 1px solid red;
+    border-radius: 9999em;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    background-color: whitesmoke;
+}
+
+.mouseOver {
+    &:hover {
+        transform: scale(1.1);
+        color: blue;
+    }
+}
+
+.example-full-width {
+    width: 100%;
+}

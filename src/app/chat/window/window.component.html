@@ -1,0 +1,14 @@
+<div>
+    <mat-form-field>
+        <input matInput placeholder="Send message" (keyup.enter)="sendMessage($event)" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+</div>
+<div class="container">
+    <div>
+        <p *ngFor="let item of messages"> {{item}} </p>
+    </div>
+    <div class="usersOnline">
+        Online users:
+        <p *ngFor="let item of usersActive"> {{item.name}} </p>
+    </div>
+</div>

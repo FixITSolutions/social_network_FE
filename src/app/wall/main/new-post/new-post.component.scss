@@ -1,0 +1,21 @@
+:host {
+    background-color: whitesmoke;
+    border-radius: 5%;
+    margin: 15px auto;
+    padding: 15px;
+    .container {
+        width: 400px;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .descriptionLimit {
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+    }
+    textarea {
+        resize: none;
+    }
+}

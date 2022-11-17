@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-title-group>
+    </mat-card-title-group>
+    <mat-card-content class="postDescription">
+        <div class="postHeader">
+            <div class="flex">
+                <img class="userAvatarPost" mat-card-image src="{{post['user.avatar']}}" alt="user profile photo" title="Go to {{post['user.name']}}'s profile">
+                <mat-card-subtitle class="createdAt"> {{post['user.name']}} @ {{post.dateFormatted}}</mat-card-subtitle>
+            </div>
+            <div *ngIf="currentUserStatus" class="mouseOver">
+                <mat-menu #postOptions="matMenu">
+                    <button mat-menu-item (click)="editPost()"><mat-icon>edit</mat-icon>Edit</button>
+                    <button mat-menu-item (click)="deletePost()"><mat-icon>delete</mat-icon>Delete</button>
+                </mat-menu>
+                <div mat-icon-button [matMenuTriggerFor]="postOptions">
+                    <mat-icon>more_horiz</mat-icon>
+                </div>
+            </div>
+        </div>
+        <mat-card-title class="postTitle">{{post.title}}</mat-card-title>
+        <hr>
+        <mat-card-title>{{post.description}}</mat-card-title>
+
+    </mat-card-content>
+    <mat-card-content class="likeAndComment">
+        <div class="mouseOver" (click)="likeThis()">
+            <label>{{post.likes}} Like(s)</label>
+            <mat-icon title="Like this post">thumb_up</mat-icon>
+        </div>
+        <div class="mouseOver" (click)="togglePanel();populateComments($event)">
+            <label>{{post.comments}} Comment(s)</label>
+            <mat-icon>comment</mat-icon>
+        </div>
+        <div class="mouseOver">
+            <label>Share</label>
+            <mat-icon class="mouseOver" title="Share this post (not created yet)">share</mat-icon>
+        </div>
+    </mat-card-content>
+
+    <mat-expansion-panel *ngIf="panelOpenState" [expanded]="panelOpenState">
+        <sn-comment *ngFor="let item of commentArray" [comment]="item"></sn-comment>
+    </mat-expansion-panel>
+    <mat-form-field class="example-full-width" (keyup.enter)="createComment(textMessage)">
+        <textarea #textMessage maxlength="255" rows="2" matInput placeholder="Write a comment ... " [(ngModel)]="comment_message" [ngModelOptions]="{standalone: true}"></textarea>
+    </mat-form-field>
+</mat-card>
+<br>
